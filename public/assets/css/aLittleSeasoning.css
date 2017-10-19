@@ -1,0 +1,13 @@
+.margin5, h2, h3, h4, input, select, button{
+    margin-left: 5%;
+    margin-right: 5%;
+}
+
+img {
+    height: 200px;
+    width: 200px;
+}
+
+.form-control, .btn {
+    width: 90%
+}
