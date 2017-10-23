@@ -13,13 +13,32 @@ router.get('/', function(req, res) {
     });
   });
 
-router.put('api/burger', function(req, res){
+  // router.get('/salads', function(req, res) {
+  //   burgerModel.getAll('salads', function(data) {
+  //     var formattedObject = {
+  //       salads: data
+  //     };
+  //     console.log(formattedObject);
+  //     res.render("saladIndex", formattedObject);
+  //   });
+  // });
+
+
+router.post('/api/burger', function(req, res){
+  console.log(req.params);
     let burgerName = req.params.burgerName;
     console.log(`from web: '${burgerName}' - changing to store it`)
-    burgerName = 'ThisNewBurger';
-    burgerModel.createBurger(burgerName, function(data){
+    // burgerModel.createBurger(burgerName, function(data){
         
-    })
+    // });
+});
+
+router.put('/api/burger/:id', function(req, res){
+
+})
+
+router.delete('/api/burger:id', function(req, res){
+
 })
 
 module.exports = router;

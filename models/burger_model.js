@@ -11,6 +11,18 @@ burger_model = {
         orm.createBurger(burgerName, function(res) {
             cb(res);
         })
+    },
+
+    eatBurger: function(burgerId, cb) {
+        orm.eatBurger(burgerId, function(res) {
+            cb(res);
+        })
+    },
+
+    deleteBurger: function(burgerId, cb) {
+        orm.deleteBurger(burgerId, function(res){
+            cb(res);
+        })
     }
 }
 
