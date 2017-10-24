@@ -30,32 +30,33 @@ router.post('/api/burger', function(req, res){
   burgerModel.createBurger(burgerObject.burgerName, function(data){
       // res.send(data); // not sure if we need this part.  
       // TODO add a reload here
-      res.redirect('/'); // sends data, but not reloading the page?
+      // res.redirect('/'); // TODO add 404 / 200 / etc
   });
 });
 
-router.put('/api/burger/:id', function(req, res){
-  let burgerObject = req.body;
-  console.log(`from web:  '${burgerObject.burgerId} - ${burgerObject.burgerEaten}' - changing to next type`);
+router.put('/api/burger/:id/:eaten', function(req, res){
+  let burgerId = req.params.id;
+  let burgerEaten = req.params.eaten;
+  console.log(`from web:  '${burgerId} - ${burgerEaten}' changing to next type`);
 
   // change burger eaten to the other possibility - the interface takes care of the rest
-  if (burgerObject.burgerEaten === '0') {
-    burgerObject.burgerEaten = 1;
+  if (burgerEaten === '0') {
+    burgerEaten = 1;
   }
   else {
-    burgerObject.burgerEaten = 0;
+    burgerEaten = 0;
   }
-  burgerModel.eatBurgerToggle(burgerObject.burgerId, burgerObject.burgerEaten, function(data){
-    res.redirect('/');
+  burgerModel.eatBurgerToggle(burgerId, burgerEaten, function(data){
+    // res.redirect('/'); // TODO add 404 / 200 / etc
   })
 });
 
-router.delete('/api/burger:id', function(req, res){
-  let burgerObject = req.body;
-  console.log(`from web: '${burgerObject.burgerId}' - to be deleted`);
+router.delete('/api/burger/:id', function(req, res){
+  let burgerId = req.params.id;
+  console.log(`from web: '${burgerId}' - to be deleted`);
 
-  burgerModel.deleteBurger(burgerObject.burgerId, function(data){
-    res.redirect('/');
+  burgerModel.deleteBurger(burgerId, function(data){
+    // res.redirect('/'); // TODO add 404 / 200 / etc
   })
 });
 

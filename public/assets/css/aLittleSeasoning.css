@@ -4,13 +4,13 @@
 }
 
 .imgMain {
-    height: 40%;
-    width: 40%;
+    height: 50%;
+    width: 50%;
 }
 
 .smallImg {
-    height: 20px;
-    width: 20px;
+    height: 25px;
+    width: 25px;
 }
 
 .form-control, .btn {
