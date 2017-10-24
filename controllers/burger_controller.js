@@ -73,12 +73,13 @@ router.get('/burger/:id', function(req, res){
 
 router.put('/api/burger/:id', function(req, res){
   let burgerId = req.params.id;
-  let newBurgerName = req.body;
-  console.log(`from web: '${burgerId}' to be renamed to ${newBurgerName}`);
+  let burger = req.body;
+  console.log(burger);
+  console.log(`from web: '${burgerId}' to be renamed to '${burger.newBurgerName}'`);
 
-  burgerModel.updateBurgerName(burgerId, newBurgerName, function(data){
+  burgerModel.updateBurgerName(burgerId, burger.newBurgerName, function(data){
     // TODO add 404 / 200 / etc
-  });
+    });
 });
 
 module.exports = router;

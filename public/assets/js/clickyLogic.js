@@ -10,9 +10,15 @@ $(document).ready(function(){
             $('#alertModal').toggle()
             return false;
         }
-        $.post('/api/burger', thisBurgerObject)
-        .then(function(){
-            location.reload();
+        // $.post('/api/burger', thisBurgerObject)
+        // .then(function(){
+        //     location.reload();
+        // });
+        $.ajax({
+            type: 'POST',
+            url: `/api/burger`,
+            data: thisBurgerObject,
+            success: location.reload()
         });
     });
 
@@ -32,7 +38,7 @@ $(document).ready(function(){
         console.log(`ID: ${thisBurgerId} - eaten: ${thisBurgerEaten}`);
 
         $.ajax({
-            type: "PUT",
+            type: 'PUT',
             url: `/api/burger/${thisBurgerId}/${thisBurgerEaten}`,
             success: location.reload()
         });
@@ -42,5 +48,16 @@ $(document).ready(function(){
         var thisBurgerId = $(this).attr('burgerid');
         var newBurgerName = $('#newBurgerName').val();
         console.log(`ID: ${thisBurgerId} - new name: ${newBurgerName}`);
+        var burgerObject = {
+            newBurgerName: newBurgerName
+        }
+        console.log(burgerObject);
+
+        $.ajax({
+            type: 'PUT',
+            url: `/api/burger/${thisBurgerId}`,
+            data: burgerObject,
+            success: location.href = '/' // TODO change this to re-direct to main page. 
+        });
     });
 });

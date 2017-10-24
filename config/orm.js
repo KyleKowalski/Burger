@@ -1,7 +1,6 @@
 var db = require('./connection.js');
 
 var orm = {
-    // selectAll()
     getAll: function(selectTable, cb) {
         db.query(`SELECT * FROM ${selectTable};`, (err, res) => {
             if (err) throw err;
@@ -16,7 +15,6 @@ var orm = {
         })
     },
 
-    // insertOne()
     createBurger: function(burger_name, cb) {
         db.query(`INSERT INTO burgers (burger_name) VALUES ('${burger_name}')`, (err, res) => {
             if (err) throw err;
@@ -25,7 +23,6 @@ var orm = {
         });
     },
 
-    // updateOne()
     eatBurgerToggle: function(burger_id, burgerStatus, cb) {
         db.query(`UPDATE burgers SET burger_eaten = ${burgerStatus} WHERE burger_id = ${burger_id}`, (err, res) => {
             if (err) throw err;
@@ -43,7 +40,8 @@ var orm = {
     },
 
     updateBurgerName: function(burger_id, newBurgerName, cb) {
-        db.query(`UPDATE TABLE burgers SET burger_name = ${newBurgerName} WHERE burger_id = ${burger_id}`, (err, res) => {
+        console.log(`ID: '${burger_id}' and name: '${newBurgerName}'`)
+        db.query(`UPDATE burgers SET burger_name = '${newBurgerName}' WHERE burger_id = ${burger_id}`, (err, res) => {
             if (err) throw err;
             console.log(`burger id ${burger_id} to be renamed to ${newBurgerName}`);
             cb(res);
