@@ -1,5 +1,14 @@
 <ul>
 {{#each burgers }}
-  <li>{{burger_name}} - {{burger_eaten}}</li>
+  <li>{{burger_name}} - 
+    {{#if burger_eaten}}Someone already ate it!{{else}}Looks Delicions, right?{{/if}} - 
+    {{#if burger_eaten}}  
+      <img class="makeAnotherBurger smallImg" burgerId="{{burger_id}}" title="Make another of this burger!" src="https://cdn3.iconfinder.com/data/icons/4th-of-july-1/64/Grill-128.png">
+    {{else}}  
+      <img class="eatBurger smallImg" burgerId="{{burger_id}}" title="Mmmm eat the burger!" src="https://cdn4.iconfinder.com/data/icons/simple-lines-2/32/Packman_Game_Character_Leisure_Eat_Smile-128.png">
+    {{/if}} - 
+    <img class="updateBurger smallImg" burgerId="{{burger_id}}" title="Make the burger MORE delicious!" src="https://cdn2.iconfinder.com/data/icons/font-awesome/1792/pencil-square-o-128.png"> - 
+    <img class="deleteBurger smallImg" burgerId="{{burger_id}}" title="This burger isn't so good - GOODBYE!" src="https://cdn4.iconfinder.com/data/icons/social-media-2082/32/Os_X-128.png">
+  </li>
 {{/each}}
 </ul>

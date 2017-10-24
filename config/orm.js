@@ -20,8 +20,8 @@ var orm = {
     },
 
     // updateOne()
-    eatBurger: function(burger_id, cb) {
-        db.query(`UPDATE burgers SET burger_eaten = true WHERE burger_id = ${burger_id}`, (err, res) => {
+    eatBurgerToggle: function(burger_id, burgerStatus, cb) {
+        db.query(`UPDATE burgers SET burger_eaten = ${burgerStatus} WHERE burger_id = ${burger_id}`, (err, res) => {
             if (err) throw err;
             console.log(`burger id ${burger_id} has been consumed!`);
             cb(res);

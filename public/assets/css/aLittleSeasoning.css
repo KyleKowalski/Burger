@@ -3,9 +3,14 @@
     margin-right: 5%;
 }
 
-img {
-    height: 200px;
-    width: 200px;
+.imgMain {
+    height: 40%;
+    width: 40%;
+}
+
+.smallImg {
+    height: 20px;
+    width: 20px;
 }
 
 .form-control, .btn {

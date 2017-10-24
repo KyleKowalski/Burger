@@ -13,8 +13,8 @@ burger_model = {
         })
     },
 
-    eatBurger: function(burgerId, cb) {
-        orm.eatBurger(burgerId, function(res) {
+    eatBurgerToggle: function(burgerId, burgerStatus, cb) {
+        orm.eatBurgerToggle(burgerId, burgerStatus, function(res) {
             cb(res);
         })
     },
