@@ -48,7 +48,7 @@ router.put('/api/burger/:id/:eaten', function(req, res){
   }
   burgerModel.eatBurgerToggle(burgerId, burgerEaten, function(data){
     // res.redirect('/'); // TODO add 404 / 200 / etc
-  })
+  });
 });
 
 router.delete('/api/burger/:id', function(req, res){
@@ -57,7 +57,28 @@ router.delete('/api/burger/:id', function(req, res){
 
   burgerModel.deleteBurger(burgerId, function(data){
     // res.redirect('/'); // TODO add 404 / 200 / etc
-  })
+  });
+});
+
+router.get('/burger/:id', function(req, res){
+  let thisBurgerId = req.params.id;
+  burgerModel.getOne('burgers', thisBurgerId, function(data) {
+    var formattedObject = {
+      burger: data
+    };
+    console.log(formattedObject);
+    res.render('update', formattedObject);
+  });
+});
+
+router.put('/api/burger/:id', function(req, res){
+  let burgerId = req.params.id;
+  let newBurgerName = req.body;
+  console.log(`from web: '${burgerId}' to be renamed to ${newBurgerName}`);
+
+  burgerModel.updateBurgerName(burgerId, newBurgerName, function(data){
+    // TODO add 404 / 200 / etc
+  });
 });
 
 module.exports = router;

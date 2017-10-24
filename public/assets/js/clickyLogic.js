@@ -2,19 +2,18 @@ $(document).ready(function(){
     
     $('#createNewBurgerButton').on('click', function(){
         var thisBurger = $('#newBurger').val();
+
         var thisBurgerObject = {
             burgerName: thisBurger
+        }
+        if (thisBurger === "" || thisBurger === null) {
+            $('#alertModal').toggle()
+            return false;
         }
         $.post('/api/burger', thisBurgerObject)
         .then(function(){
             location.reload();
-        })
-        // $.ajax({
-        //     type: "POST",
-        //     url: '/api/burger',
-        //     data: thisBurgerObject,
-        //     success: console.log('success')
-        //   });
+        });
     });
 
     $('.deleteBurger').on('click', function(){
@@ -39,11 +38,9 @@ $(document).ready(function(){
         });
     });
 
-    $('.updateBurger').on('click', function(){
+    $('#updateThisBurgerButton').on('click', function(){
         var thisBurgerId = $(this).attr('burgerid');
-        console.log(thisBurgerId);
+        var newBurgerName = $('#newBurgerName').val();
+        console.log(`ID: ${thisBurgerId} - new name: ${newBurgerName}`);
     });
-
-
-
 });

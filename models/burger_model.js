@@ -7,6 +7,12 @@ burger_model = {
         });
       },
 
+    getOne: function(tableToGet, idToGet, cb) {
+        orm.getOne(tableToGet, idToGet, function(res) {
+            cb(res);
+        });
+    },
+
     createBurger: function(burgerName, cb) {
         orm.createBurger(burgerName, function(res) {
             cb(res);
@@ -21,6 +27,12 @@ burger_model = {
 
     deleteBurger: function(burgerId, cb) {
         orm.deleteBurger(burgerId, function(res){
+            cb(res);
+        })
+    },
+
+    updateBurgerName: function(burgerId, newBurgerName, cb) {
+        orm.updateBurgerName(burgerId, newBurgerName, function(res){
             cb(res);
         })
     }
