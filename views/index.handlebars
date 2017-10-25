@@ -4,7 +4,7 @@
     <ul>
     {{#each burgers }}
     <li>{{burger_name}} - 
-        {{#if burger_eaten}}Someone already ate it!{{else}}Looks Delicious, right?{{/if}} - 
+        {{#if burger_eaten}}Someone already ate it! Click the grill to make another! (>>> that's a grill>>>){{else}}Looks Delicious, right?{{/if}} 
         {{#if burger_eaten}}  
         <img class="toggleEatBurger smallImg" burgerId="{{burger_id}}" burgerEaten="{{burger_eaten}}" title="Make another of this burger!" src="https://cdn3.iconfinder.com/data/icons/4th-of-july-1/64/Grill-128.png">
         {{else}}  

@@ -9,10 +9,27 @@
         <script type="text/javascript" src="\assets\js\clickyLogic.js"></script>
 	</head>
 	<body>
-		<h1 class="well">The header that exists on all pages... (and stands as a weak example)</h1>
+		<header class="text-center">
+			<nav class="navbar navbar-default">
+				<h1>The Burger Header!</h1>
+			</nav>
+		</header>
 
+		<div class='wrapper'>
 		{{{ body }}}
+		</div>
 
-		<h1 class="well">The footer that exists on all pages... (and stands as a weak example)</h1>
+		<footer class="text-center footer navbar-fixed-bottom">
+			<h1>The Burger Footer!</h1>
+		</footer>
+
+		<div class="modal fade bs-example-modal-sm text-center" id="errorModal" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel">
+        	<div class="modal-dialog modal-sm" role="document">
+            	<div class="modal-content">
+                	<h1>We have encountered a problem that needs a solution:</h1>
+					<h1 id="listErrorHere"></h1>
+            	</div>
+        	</div>
+    	</div>
 	</body>
 </html>

@@ -10,10 +10,6 @@ $(document).ready(function(){
             $('#alertModal').toggle()
             return false;
         }
-        // $.post('/api/burger', thisBurgerObject)
-        // .then(function(){
-        //     location.reload();
-        // });
         $.ajax({
             type: 'POST',
             url: `/api/burger`,
