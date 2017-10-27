@@ -8,6 +8,7 @@ html, body {
 .navbar, footer {
 	background-color:rgb(165, 171, 195);
 	height:70px; 
+	min-width: 340px;
 } 
 
 .main-wrapper {
