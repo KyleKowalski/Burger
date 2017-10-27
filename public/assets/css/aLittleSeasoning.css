@@ -6,35 +6,32 @@ body {
     height:100%;
     margin:0px;
 	padding:0px;
-	padding-bottom:70px;
-	/* background-image: url("../images/concrete_seamless.png"); */
+	/* margin-top:70px; */
+	padding-bottom:70px; 
 	min-width: 340px
 }
 
-navbar {
-
+.navbar, footer {
 	background-color:rgb(165, 171, 195);
-	/* border-top: 5px solid teal; */
-	/* position: relative;
-	bottom:0;
-	height:70px; */
+	height:70px; 
 } 
 
 footer {
-    /* height:5%;  */
     clear: both;
-	/* text-align: center; */
-	vertical-align: middle;
-	background-color:rgb(165, 171, 195);
-	/* border-top: 5px solid teal; */
 	position: relative;
+	vertical-align: middle;
+	margin-bottom: 0;
 	bottom:0;
 	height:70px;
-	/*margin-top:-70px;*/   
+	margin-top:-70px;   
 }
 
 .wrapper {
-    height: 100%
+	/* height: 100%; */
+	margin:0px;
+	padding:0px;
+	margin-top:70px;
+	margin-bottom:70px;
 }
 
 .margin5, h2, h3, h4, input, select, button{

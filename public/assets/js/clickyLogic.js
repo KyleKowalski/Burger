@@ -22,7 +22,7 @@ $(document).ready(function(){
         var thisBurgerId = $(this).attr('burgerid');
         
         $.ajax({
-            type: "DELETE",
+            type: 'DELETE',
             url: `/api/burger/${thisBurgerId}`, 
             success: location.reload()
         });
