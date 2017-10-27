@@ -3,25 +3,28 @@
 	<head>
 		<title>Eat-Da-Burger! (or die trying...)</title>
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
-        <link rel="stylesheet" href="\assets\css\aLittleSeasoning.css">
+
         <script src="https://code.jquery.com/jquery.js"></script>
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
         <script type="text/javascript" src="\assets\js\clickyLogic.js"></script>
+		        <link rel="stylesheet" href="\assets\css\aLittleSeasoning.css">
 	</head>
 	<body>
-		<header class="text-center">
-			<nav class="navbar navbar-default navbar-fixed-top">
-				<h1>The Burger Header!</h1>
-			</nav>
-		</header>
+		<div class='main-wrapper'>
+			<header class="text-center">
+				<nav class="navbar navbar-default navbar-fixed-top">
+					<h1>The Burger Header!</h1>
+				</nav>
+			</header>
 
-		<div class='wrapper'>
-		{{{ body }}}
-		</div>
+			
+			{{{ body }}}
+			
 
-		<footer class="text-center footer">
-			<h1>&copy; Kyle Kowalski ✌</h1>
-		</footer>
+			<footer class="text-center">
+				<h1>&copy; Kyle Kowalski ✌</h1>
+			</footer>
+		</div> 
 
 		<div class="modal fade bs-example-modal-sm text-center" id="errorModal" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel">
         	<div class="modal-dialog modal-sm" role="document">
